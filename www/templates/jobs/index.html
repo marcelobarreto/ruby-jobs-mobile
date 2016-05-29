@@ -2,11 +2,11 @@
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="job in jobs" type="item-text-wrap" href="#/tab/jobs/{{job.id}}/view">
-        <img src="/img/logo.png">
+        <img src="/img/badges/{{job.modality}}.png">
         <h2>{{job.title}}</h2>
         <p>{{job.location}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
 
+        <i class="icon ion-chevron-right icon-accessory"></i>
         <ion-option-button class="button-positive" ng-click="share(job)">
           Share
         </ion-option-button>

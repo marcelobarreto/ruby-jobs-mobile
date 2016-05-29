@@ -1,8 +1,43 @@
 <ion-view>
-  <ion-content class="padding">
-    <h1 class="text-center">{{job.title}}</h1>
-    <p>Location: {{ job.location }}</p>
-    <p>Company: {{ job.company }}</p>
-    <button class="button button-positive button-block">Entrar em contato</button>
+  <ion-content>
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="/img/badges/{{job.modality}}.png">
+        <h2>{{job.title}}</h2>
+        <p>{{job.created_at | date: 'dd/MM/yyyy, HH:mm'}}</p>
+      </div>
+
+      <div class="item item-icon-left" href="{{job.url}}" target="blank">
+        <i class="icon ion-link"></i>
+        {{job.company}}
+      </div>
+
+      <div class="item item-icon-left">
+        <i class="icon ion-ios-world"></i>
+        {{job.location}}
+      </div>
+
+      <div class="item item-icon-left">
+        <i class="icon ion-social-usd"></i>
+        {{job.salary}}
+      </div>
+
+      <div class="item item-icon-left">
+        <i class="icon ion-android-globe"></i>
+        {{job.modality}}
+      </div>
+
+      <div class="item item-body">
+        <h2>Descrição</h2>
+        <p>{{job.description}}</p>
+      </div>
+
+      <div class="item item-body" ng-show="job.skills">
+        <h2>Habilidades</h2>
+        <p>{{job.skills}}</p>
+      </div>
+    </div>
+
+    <a class="button button-positive button-block" href="{{job.website}}" ng-show="job.website" target="blank">Participar do processo seletivo</a>
   </ion-content>
 </ion-view>

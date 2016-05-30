@@ -2,14 +2,14 @@ angular.module('starter.controllers', [])
 
 .controller('JobsCtrl', function($scope, Jobs) {
   $scope.jobs = Jobs.all();
-  $scope.page = 2;
+  $scope.nextPage = 2; // nextPage starts on 2 because the first is already loaded.
   $scope.moreItemsAvailable = true;
 
   $scope.loadMore = function() {
-    var jobs = Jobs.all({page: $scope.page}, function(response) {
+    var jobs = Jobs.all({page: $scope.nextPage}, function(response) {
       if (response.length > 0) {
         $scope.jobs = $scope.jobs.concat(jobs);
-        $scope.page ++;
+        $scope.nextPage ++;
       } else {
         $scope.moreItemsAvailable = false;
       }

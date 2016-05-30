@@ -11,10 +11,12 @@
         <p>{{job.location}}</p>
         <p>{{job.company}}</p>
         <span class="badge badge-assertive">{{job.modality}}</span>
+
         <!-- <i class="icon ion-chevron-right icon-accessory"></i>
-        <ion-option-button class="button-positive" ng-click="share(job)">
-          Share
+        <ion-option-button class="button button-assertive icon-left ion-android-share-alt" ng-click="share()">
+          Compartilhar
         </ion-option-button> -->
+
       </ion-item>
       <ion-infinite-scroll ng-if="moreItemsAvailable" on-infinite="loadMore()" distance="10%" spinner="lines">
       </ion-infinite-scroll>

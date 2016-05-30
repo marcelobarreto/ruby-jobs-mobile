@@ -1,9 +1,28 @@
 angular.module('starter.controllers', [])
 
-.controller('JobsCtrl', function($scope, Jobs) {
+.controller('JobsCtrl', function($scope, $cordovaSocialSharing, $ionicModal, Jobs) {
   $scope.jobs = Jobs.all();
   $scope.nextPage = 2; // nextPage starts on 2 because the first is already loaded.
   $scope.moreItemsAvailable = true;
+
+  $ionicModal.fromTemplateUrl('templates/share.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.share = function() {
+    $scope.modal.show();
+  }
 
   $scope.loadMore = function() {
     var jobs = Jobs.all({page: $scope.nextPage}, function(response) {
@@ -16,10 +35,6 @@ angular.module('starter.controllers', [])
 
       $scope.$broadcast('scroll.infiniteScrollComplete');
     });
-  }
-
-  $scope.share = function(job) {
-    console.log(job.id);
   }
 })
 

@@ -1,0 +1,34 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-assertive">
+    <h1 class="title icon-left ion-android-share-alt"> Compartilhar</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeModal()">
+        <i class="icon ion-close"></i>
+      </button>
+    </div>
+  </ion-header-bar>
+
+  <ion-content>
+    <div class="scroll padding">
+      <button class="button button-assertive button-outline button-block icon-left ion-social-twitter" ng-click="shareViaTwitter()">
+        Compartilhar no Twitter
+      </button>
+
+      <button class="button button-assertive button-outline button-block icon-left ion-social-facebook" ng-click="">
+        Compartilhar no Facebook
+      </button>
+
+      <button class="button button-assertive button-outline button-block icon-left ion-social-linkedin" ng-click="">
+        Compartilhar no LinkedIn
+      </button>
+
+      <button class="button button-assertive button-outline button-block icon-left ion-email" ng-click="">
+        Compartilhar via E-mail
+      </button>
+
+      <button class="button button-assertive button-outline button-block icon-left ion-android-textsms" ng-click="">
+        Compartilhar via SMS
+      </button>
+    </div>
+  </ion-content>
+</ion-modal-view>

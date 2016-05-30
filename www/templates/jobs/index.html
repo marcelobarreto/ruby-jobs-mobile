@@ -6,7 +6,7 @@
         <input type="search" placeholder="Filtrar" ng-model="searchText">
       </label>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="job in jobs | filter:searchText" type="item-text-wrap" href="#/tab/jobs/{{job.id}}/view">
-        <img ng-src="/img/badges/{{job.modality}}.png">
+        <img ng-src="img/badges/{{job.modality}}.png">
         <h2>{{job.title}}</h2>
         <p>{{job.location}}</p>
         <p>{{job.company}}</p>

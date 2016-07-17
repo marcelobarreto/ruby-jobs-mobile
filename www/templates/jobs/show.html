@@ -39,7 +39,11 @@
         </div>
       </div>
 
-      <a class="button button-block button-assertive button-outline icon-left ion-android-checkbox-outline" href="{{job.website}}" ng-show="job.website" target="blank">
+      <a
+        class="button button-block button-assertive button-outline icon-left ion-android-checkbox-outline"
+        href="#"
+        ng-click="window.open(job.website, '_system')"
+        ng-show="job.website">
         Participe do processo seletivo!
       </a>
     </div>

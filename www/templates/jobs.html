@@ -1,0 +1,25 @@
+<ion-view view-title="Ruby Jobs">
+  <ion-content>
+    <ion-list>
+      <label class="item item-input" name="search">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Filtrar" ng-model="searchText">
+      </label>
+      <ion-item class="item-remove-animate item-text-wrap" ng-repeat="job in jobs | filter:searchText" type="item-text-wrap" href="#/app/jobs/{{job.id}}">
+        <!-- <img class="filter-assertive" ng-src="img/badges/{{job.modality}}.png"> -->
+        <h2>{{job.title}}</h2>
+        <p>{{job.location}}</p>
+        <p>{{job.company}}</p>
+
+        <p>{{job.modality}}</p>
+        <p>{{job.created_at | date:'dd/MM/yy'}}</p>
+        <!-- <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button class="button-positive" ng-click="share(job)">
+          Share
+        </ion-option-button> -->
+      </ion-item>
+      <ion-infinite-scroll ng-if="moreItemsAvailable" on-infinite="loadMore()" distance="10%" spinner="lines">
+      </ion-infinite-scroll>
+    </ion-list>
+  </ion-content>
+</ion-view>

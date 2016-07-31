@@ -14,5 +14,5 @@ app.controller('JobsCtrl', function($scope, Jobs) {
 
       $scope.$broadcast('scroll.infiniteScrollComplete');
     });
-  }
+  };
 });
